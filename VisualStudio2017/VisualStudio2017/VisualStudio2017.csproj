@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4D7117EB-0F32-4425-BB8B-CF8005E809B2}</ProjectGuid>
+    <ProjectGuid>{FEF4B29D-344F-4C2D-BDDB-0C70FAF4441A}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>VisualStudio2017</RootNamespace>
     <AssemblyName>VisualStudio2017</AssemblyName>
@@ -42,6 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Animla.cs" />
+    <Compile Include="Person.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

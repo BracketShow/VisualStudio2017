@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace VisualStudio2017
 {
-    class Program
+    class Animal
     {
-        static void Main(string[] args)
-        {
-        }
+
     }
 }

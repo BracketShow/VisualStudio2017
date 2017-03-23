@@ -21,7 +21,7 @@ Un autre élément qu'on peut noter (que vous pouvez voir sur les captures) est 
 ## Améliorations de l'IDE
 Une des plus grandes améliorations qu'on peut voir dans cette nouvelle version est la performance. Un gros travail d'optimisation a été fait pour réduire le temps de démarrage et le temps de chargement des solutions. Selon Microsoft, le temps de démarrage serait 50% plus rapide qu'avant lors de la première utilisation.
 Pour bien le constater, j'ai fait le test de comparer l'ouverture d'une solution sur laquelle j'ai travaillé récemment, qui contenait 15 projets. Pour un temps d'ouverture d'environ 10 secondes avec Visual Studio 2015, on passait à seulement 6 secondes avec la version 2017. 
-Malgré cette différence assez notable, je me suis demandé si l'option de "Lightweight Solution Load", qui a été ajoutée pour permettre de charger plus rapidement et pour mieux utiliser la mémoire, pourrait me permettre d'améliorer ce temps. J'ai donc activé l'option pour ma solution (cette option n'est pas activée par défaut) et refait le test, pour en arriver à un temps d'ouverture de 3 secondes.
+Malgré cette différence assez notable, je me suis demandé si l'option de "Lightweight Solution Load", qui a été ajoutée pour permettre de charger plus rapidement et pour mieux utiliser la mémoire, pourrait me permettre d'améliorer ce temps. J'ai donc activé l'option pour ma solution (cette option n'est pas activée par défaut) et refait le test, pour en arriver à un temps d'ouverture de 3 secondes. L'idée en arrière de cette option est de ne pas totalement charger les projets de la solution tant qu'on ne commence pas à les utiliser. La navigation à travers le code pourra donc se faire très rapidement après le démarrage, et il ne sera pas nécessaire d'atteindre que nos 15 projets soient chargés avant de commencer à travailler dans celui où nous voulons faire du code.
 Je vous laisse le soin de faire le test avec vos solutions, mais je crois qu'on peut considérer l'objectif de performance comme atteint !
 
 ## Page de démarrage
@@ -65,3 +65,37 @@ La polyvalence faisant partie intégrale de notre métier, il arrive parfois que
 
 Il est même possible d'ouvrir un dossier dans Visual Studio directement à partir de l'explorateur de fichier, avec une nouvelle commande ajoutée au menu contextuel. 
 
+## Actions rapides et refactoring
+Plusieurs options de refactoring se sont ajoutées avec cette nouvelle version, dont certaines reliées aux changements que C#7 apporte. En voici quelques-unes qui ont retenu mon attention, puisqu'avant, il nous était seulement possible de bénéficier de celles-ci avec l'aide d'un outil additionnel comme Resharper.
+
+##### Simplifier l'initialisation de variables avec un initialiseur
+Lorsqu'on a un objet à initialiser avec plusieurs propriétés, il est préférable d'utiliser l'initialiseur, pour vraiment encapsuler l'initialisation de notre variable, et pour éviter de répéter le nom de la variable inutilement. L'option de refactoring vient donc nous aider à rapidement mettre ceci en place, comme vous pouvez le voir avec cette capture d'écran:
+
+![Initializer](images/initializer.png)
+
+
+##### Déplacer les variables "out" inline
+Une des nouvelles fonctionnalités de C#7 est de pouvoir déclarer les variables "out" directement dans la fonction l'utilisant (un TryParse, par exemple). L'option de refactoring nous est donc offerte par Visual Studio pour simplifier ceci:
+
+![Inlineoutvariable](images/inlineoutvariable.png)
+
+
+##### Utilisation des expressions de Throw
+Une autre des nouvelles fonctionnalités de C#7 est de pouvoir directement lancer une exception avec l'opérateur de fusion Null (null-coalescing), au lieu du traditionnel "if" qui vérifie si la variable est nulle. Visual Studio nous offre donc l'option de faire le refactoring là-dessus, comme démontré ci-dessous:
+
+![Throw Expression](images/throw-expression.png)
+
+
+##### Déplacer un type vers un fichier correspondant
+Il nous arrive parfois, dans le feu de l'action, de déclarer plus d'un type à l'intérieur du même fichier. Avant Visual Studio 2017, pour le déplacer, nous devions passer par l'ajout d'un item dans notre projet, nommé de la même manière que le type en question, couper notre type déclaré et le coller à l'intérieur du nouveau fichier créé, écrasant la déclaration vide. Maintenant, il nous suffit d'utiliser l'option de refactoring que Visual Studio nous offre et le tout se fera automatiquement.
+
+![Movetype](images/movetype.png)
+
+
+##### Synchroniser le nom d'un fichier et d'un type
+Il nous arrive tous à un moment ou un autre de devoir renommer une classe, et pour garder le nom du fichier identique, il fallait manuellement renommer le fichier au niveau de l'explorateur de solution. Nous avons maintenant la possibilité de faire l'opération de synchroniser les deux, d'un côté comme de l'autre, directement à partir des options de refactoring:
+
+![Sync Type File](images/sync-type-file.png)
+
+
+##### 

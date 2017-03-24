@@ -10,6 +10,14 @@ namespace VisualStudio2017
     {
         static void Main(string[] args)
         {
+            var person = new Person() {
+                FirstName = "Bruno",
+                LastName = "Barrette"
+            };
+
+            Console.WriteLine(string.Format("Mon nom est {0} {1}", person.FirstName, person.LastName));
+            
+            Console.ReadKey();
         }
 
         private static void UsingObjectInitializerRefactoring()

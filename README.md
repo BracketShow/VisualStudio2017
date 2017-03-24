@@ -98,4 +98,34 @@ Il nous arrive tous à un moment ou un autre de devoir renommer une classe, et p
 ![Sync Type File](images/sync-type-file.png)
 
 
-##### 
+##### Conversion de String.Format en interpolation de chaîne
+C#6 nous avait amené la fonction d'interpolation de chaîne, qui nous permet d'écrire une chaîne de caractères en y insérant des variables inline, au lieu du traditionnel String.Format:
+
+```csharp
+var name = $"Mon nom est {person.FirstName} {person.LastName}";
+```
+
+Il nous est donc possible d'utiliser ceci depuis quelques temps déjà, mais l'option de refactoring vers l'interpolation n'était pas disponible, à moins d'avoir un outil (et des coûts supplémentaires) comme Resharper. Aujourd'hui, l'option nous est finalement accessible:
+
+![Interpolation](images/interpolation.png)
+
+## Filtres sur l'IntelliSense
+Une grande amélioration au niveau de l'IntelliSense nous permet maintenant de filtrer ce qui nous est affiché, pour par exemple voir seulement les classes, les structures, ou encore les variables locales. Ces options de filtres sont d'ailleurs accessibles avec des raccourçis de clavier, donc tout ceci peut se faire sans que nos mains quittent le clavier.
+
+## Débogage
+
+##### Run to click
+Le temps est breakpoint temporaires, qui servaient seulement à nous amener à un endroit précis lors de débogages, est révolu. Du moment où nous sommes en état d'arrêt à l'intérieur du code, un icône sera accessible à gauche de n'importe quelle ligne où on met notre curseur, et en un simple clic, l'exécution se fera jusqu'à cette ligne:
+
+![Run To Click](images/run-to-click.png)
+
+## Assistant d'exception amélioré
+Le premier changement que vous pourrez remarquer avec cette nouvelle version d'assistant d'exception est que la fenêtre n'est plus modale.
+
+Un autre aspect très utile concerne les exceptions imbriquées, qui sont maintenant accessibles directement à partir de l'assistant. Plus besoin d'ouvrir l'objet de l'exception pour aller voir sa propriété InnerException (et potentiellement ses exceptions imbriquées).
+
+## Le Roaming Extension Manager
+Nous avons tous certaines extensions de Visual Studio que nous utilisons partout où nous allons, qu'il faut réinstaller chaque fois qu'on accède un nouveau poste, ou encore si on doit réinstaller notre ordinateur. Grâce au Roaming Extension Manager, les extensions que nous désignerons pour être "roaming" seront automatiquement synchronisées dans le cloud et réinstallées dès que vous serez connectés à votre compte Visual Studio.
+
+## Conclusion
+Ces changements ne sont qu'une partie des changements que Visual Studio 2017 nous amène. Mais avec le petit survol que nous venons de faire, je crois qu'il est facile de constater que beaucoup d'efforts ont été mis pour améliorer notre expérience d'utilisation et nous faciliter la vie dans notre travail au quotidien.

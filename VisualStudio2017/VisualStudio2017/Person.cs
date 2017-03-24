@@ -16,5 +16,7 @@ namespace VisualStudio2017
         public string PostalCode { get; set; }
         public string Country { get; set; }
         public DateTime BirthDate { get; set; }
+
+        
     }
 }

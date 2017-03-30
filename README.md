@@ -20,19 +20,26 @@ Un autre élément qu'on peut noter (que vous pouvez voir sur les captures) est 
 
 ## Améliorations de l'IDE
 Une des plus grandes améliorations qu'on peut voir dans cette nouvelle version est la performance. Un gros travail d'optimisation a été fait pour réduire le temps de démarrage et le temps de chargement des solutions. Selon Microsoft, le temps de démarrage serait 50% plus rapide qu'avant lors de la première utilisation.
+
 Pour bien le constater, j'ai fait le test de comparer l'ouverture d'une solution sur laquelle j'ai travaillé récemment, qui contenait 15 projets. Pour un temps d'ouverture d'environ 10 secondes avec Visual Studio 2015, on passait à seulement 6 secondes avec la version 2017. 
-Malgré cette différence assez notable, je me suis demandé si l'option de "Lightweight Solution Load", qui a été ajoutée pour permettre de charger plus rapidement et pour mieux utiliser la mémoire, pourrait me permettre d'améliorer ce temps. J'ai donc activé l'option pour ma solution (cette option n'est pas activée par défaut) et refait le test, pour en arriver à un temps d'ouverture de 3 secondes. L'idée en arrière de cette option est de ne pas totalement charger les projets de la solution tant qu'on ne commence pas à les utiliser. La navigation à travers le code pourra donc se faire très rapidement après le démarrage, et il ne sera pas nécessaire d'atteindre que nos 15 projets soient chargés avant de commencer à travailler dans celui où nous voulons faire du code.
+
+Malgré cette différence assez notable, je me suis demandé si l'option de "Lightweight Solution Load", qui a été ajoutée pour permettre de charger plus rapidement et pour mieux utiliser la mémoire, pourrait me permettre d'améliorer ce temps. J'ai donc activé l'option pour ma solution (cette option n'est pas activée par défaut) et refait le test, pour en arriver à un temps d'ouverture de 3 secondes. 
+
+L'idée en arrière de cette option est de ne pas totalement charger les projets de la solution tant qu'on ne commence pas à les utiliser. La navigation à travers le code pourra donc se faire très rapidement après le démarrage, et il ne sera pas nécessaire d'atteindre que nos 15 projets soient chargés avant de commencer à travailler dans celui où nous voulons faire du code.
+
 Je vous laisse le soin de faire le test avec vos solutions, mais je crois qu'on peut considérer l'objectif de performance comme atteint !
 
 ## Page de démarrage
-Beaucoup de changements sur cette page qui nous est offerte à l'ouverture de l'application. 
-Un premier changement, quoique mineur, est la possibilité de cacher la section "Developer News". Pour ceux qui ne consultent pas ces nouvelles, cela permettra de laisser toute la place aux récents projets et à la création de nouveaux.
+Beaucoup de changements sur cette page qui nous est offerte à l'ouverture de l'application. Un premier changement, quoique mineur, est la possibilité de cacher la section "Developer News". Pour ceux qui ne consultent pas ces nouvelles, cela permettra de laisser toute la place aux récents projets et à la création de nouveaux.
+
 Parlant de nouveaux projets, nous avons là un changement qui sera selon moi le bienvenue pour beaucoup de gens. Dans les versions précédantes de Visual Studio, la création d'un nouveau projet nous ouvrait tout simplement le dialogue de sélection de gabarit de projet. 
 
 Avec 2017, une section de la page est maintenant dédiée à la création de projets, en nous permettant de choisir parmis les gabarits de projets récemment utilisés 
+
 ![Recent](images/recent.png)
 
 ou encore avec la barre de recherche de gabarit.
+
 ![Recherche](images/recherche.png)
 
 Dans la majorité des cas, il sera donc possible de démarrer un nouveau projet directement à partir de cet écran.
